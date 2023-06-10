@@ -1,0 +1,13 @@
+# This model will the 'basic profile' for Haphaestus
+type NabuProfileAlpha
+  @createModel(
+    accountRelation: LIST
+    description: "User profile for Hephaestus."
+  ) {
+  displayName: String! @string(minLength: 3, maxLength: 50)
+  daoList: [DAO]
+  reputation: Int!
+  accountCreated: DateAndTime!
+}
+
+# type Token @createModel(accountRelation: LIST){}
