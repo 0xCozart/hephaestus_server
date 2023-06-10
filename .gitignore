@@ -1,0 +1,9 @@
+ceramic-indexing
+log
+node_modules
+admin.sk
+ceramic
+ceramic.json
+composedb
+composedb.env
+daemon_config.json
