@@ -10,4 +10,4 @@ type NabuProfileAlpha
   accountCreated: DateAndTime!
 }
 
-# type Token @createModel(accountRelation: LIST){}
+type Token @createModel(accountRelation: LIST, description: "DAO contract and token information."){}
