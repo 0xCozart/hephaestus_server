@@ -5,9 +5,23 @@ type NabuProfileAlpha
     description: "User profile for Hephaestus."
   ) {
   displayName: String! @string(minLength: 3, maxLength: 50)
-  daoList: [DAO]
+  daoList: [DAOToken]
   reputation: Int!
   accountCreated: DateAndTime!
 }
 
-type Token @createModel(accountRelation: LIST, description: "DAO contract and token information."){}
+type DAO @createModel(accountRelation: LIST, description: "DAO information.") {
+  daoName: String! @string(minLength: 3, maxLength: 50)
+  token: DAOToken!;
+  members: [NabuProfileAlpha]
+  role: [String]
+}
+
+type DAOToken
+  @createModel(
+    accountRelation: LIST
+    description: "DAO contract and token information."
+  ) {
+  # need to research to see if there is a standard for erc721/1155
+  token: URI
+}
