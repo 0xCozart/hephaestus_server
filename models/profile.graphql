@@ -1,27 +1,44 @@
-# This model will the 'basic profile' for Haphaestus
+# This model will the 'basic profile' for Nabu
 type NabuProfileAlpha
   @createModel(
     accountRelation: LIST
     description: "User profile for Hephaestus."
   ) {
+  # userDID: model to account reference here
+  userDID: DID! @accountRefrence
   displayName: String! @string(minLength: 3, maxLength: 50)
-  daoList: [DAOToken]
-  reputation: Int!
+  # daoList: model to model - 
+  daoList: [DAO] @docuemntReference(model: "DAO")
   accountCreated: DateAndTime!
 }
 
-type DAO @createModel(accountRelation: LIST, description: "DAO information.") {
-  daoName: String! @string(minLength: 3, maxLength: 50)
-  token: DAOToken!;
-  members: [NabuProfileAlpha]
-  role: [String]
+type NabuProfileAlpha @loadModel(id: "") {
+  id: ID!
 }
 
-type DAOToken
-  @createModel(
-    accountRelation: LIST
-    description: "DAO contract and token information."
-  ) {
-  # need to research to see if there is a standard for erc721/1155
-  token: URI
+type DAO @loadModel(id: "") {
+  id: ID!
+}
+
+type UserDAOProfile @createModel(accountRelation: LIST, description: "Users DAO profile."){
+  role: [String]
+  reputation: Int!
+  dateJoined: DateAndTime!
+  userDID: DID! @accountRefrence
+  # create the stream doc reference
+  usersNabuProfileID: StreamID! @docuemntReference(model: "NabuProfileAlpha")
+  # the property points model + stream :D
+  usersNabuProfile: NabuProfileAlpha! @relationDocument(property: "usersNabuProfileID")
+  # same as above
+  daoID: StreamID! @docuemntReference(model: "DAO")
+  dao: DAO @relationDocument(property: "daoID")
+}
+
+type DAO @createModel(accountRelation: LIST, description: "DAO information.") {
+  name: String! @string(minLength: 3, maxLength: 50)
+  description: String @string(maxLength: )
+  token: DAOToken!;
+  members: [DID] @accountRefrence
+  roles: [String]
+  
 }
