@@ -1,0 +1,10 @@
+type DAO @createModel(accountRelation: LIST, description: "DAO information.") {
+  name: String! @string(minLength: 3, maxLength: 50)
+  description: String! @string(maxLength: 500)
+  token: AccountID!
+  url: String!
+  members: [DID!]! @accountReference
+  roles: [String!]
+  createdAt: DateTime!
+  adminDID: DID! @documentAccount
+}

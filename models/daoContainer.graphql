@@ -1,0 +1,23 @@
+type NabuProfileAlpha @loadModel(id: "") {
+  id: ID!
+}
+
+type DAO @loadModel(id: "") {
+  id: ID!
+}
+
+type UserDAOProfile
+  @createModel(accountRelation: LIST, description: "Users DAO profile.") {
+  role: [String]
+  reputation: Int!
+  dateJoined: DateTime!
+  userDID: DID! @accountRefrence
+  # create the stream doc reference
+  usersNabuProfileID: StreamID! @docuemntReference(model: "NabuProfileAlpha")
+  # the property points model + stream :D
+  usersNabuProfile: NabuProfileAlpha!
+    @relationDocument(property: "usersNabuProfileID")
+  # same as above
+  daoID: StreamID! @docuemntReference(model: "DAO")
+  dao: DAO @relationDocument(property: "daoID")
+}
