@@ -6,7 +6,7 @@ type DAO @loadModel(id: "") {
 type NabuProfileAlpha
   @createModel(
     accountRelation: SINGLE
-    description: "User profile for Hephaestus."
+    description: "User profile for nabu."
   ) {
   # userDID: model to account reference here
   userDID: DID! @accountRefrence
