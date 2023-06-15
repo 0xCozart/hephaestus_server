@@ -1,19 +1,17 @@
-type DAO
-  @loadModel(
-    id: "kjzl6hvfrbw6c96obc67ocqpesvzg0v5opvwox3pncdkh9co0bjy6cntgh269nh"
-  ) {
-  id: ID!
-}
-
 # This model will the 'basic profile' for Nabu
 type NabuProfileAlpha
-  @createModel(accountRelation: SINGLE, description: "User profile for nabu.") {
+  @createModel(accountRelation: SINGLE, description: "User profile for Nabu.") {
   # userDID: model to account reference here
   userDID: DID! @accountReference
   displayName: String! @string(minLength: 3, maxLength: 50)
   # daoList: model to model --
-  daoList: [StreamID!] @documentReference(model: "DAO")
   accountCreated: DateTime!
-  addressList: [AccountID!]
-  # socialNetworks: [String!]
+  addressList: [AccountID!] @list(minLength: 0, maxLength: 20)
+  socialNetworks: [SocialNetworkInfo!] @list(minLength: 0, maxLength: 10)
+}
+
+type SocialNetworkInfo {
+  network: String! @string(maxLength: 20)
+  username: String! @string(maxLength: 50)
+  url: String @string(maxLength: 100)
 }
