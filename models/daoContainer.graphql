@@ -4,7 +4,7 @@ type NabuProfileAlpha @loadModel(id: "") {
 
 type DAO
   @loadModel(
-    id: "kjzl6hvfrbw6c9ies4zaqxb9gdv3wufiug9gnxizjiw4bw5n3mdt833hdxzhkhz"
+    id: "kjzl6hvfrbw6c96obc67ocqpesvzg0v5opvwox3pncdkh9co0bjy6cntgh269nh"
   ) {
   id: ID!
 }
@@ -13,8 +13,7 @@ type UserDAOProfile
   @createModel(accountRelation: LIST, description: "Users DAO profile.") {
   role: [String]
   reputation: Int!
-  dateJoined: DateTime!
-  userDID: DID! @accountRefrence
+  userDID: DID! @accountReference
   # create the stream doc reference
   usersNabuProfileID: StreamID! @docuemntReference(model: "NabuProfileAlpha")
   # the property points model + stream :D
@@ -22,5 +21,5 @@ type UserDAOProfile
     @relationDocument(property: "usersNabuProfileID")
   # same as above
   daoID: StreamID! @docuemntReference(model: "DAO")
-  dao: DAO @relationDocument(property: "daoID")
+  dao: AccountID! @relationDocument(property: "daoID")
 }

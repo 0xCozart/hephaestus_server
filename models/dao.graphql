@@ -1,5 +1,4 @@
 type DAO @createModel(accountRelation: LIST, description: "DAO information.") {
-  daoId: StreamID!
   name: String! @string(minLength: 3, maxLength: 50)
   description: String! @string(minLength: 0, maxLength: 500)
   chain: ChainID!

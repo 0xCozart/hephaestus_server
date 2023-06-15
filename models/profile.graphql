@@ -1,6 +1,6 @@
 type DAO
   @loadModel(
-    id: "kjzl6hvfrbw6c9ies4zaqxb9gdv3wufiug9gnxizjiw4bw5n3mdt833hdxzhkhz"
+    id: "kjzl6hvfrbw6c96obc67ocqpesvzg0v5opvwox3pncdkh9co0bjy6cntgh269nh"
   ) {
   id: ID!
 }
@@ -16,9 +16,4 @@ type NabuProfileAlpha
   accountCreated: DateTime!
   addressList: [AccountID!]
   # socialNetworks: [String!]
-}
-
-type DAOList
-  @createModel(accountRelation: SINGLE, description: "List of DAOs via DID.") {
-  list: [DAO!] @relationFrom(model: "DAO", property: "id")
 }
