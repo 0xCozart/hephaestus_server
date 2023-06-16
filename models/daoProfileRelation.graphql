@@ -12,7 +12,7 @@ type DAO
   id: ID!
 }
 
-type DaoProfileContainer
+type DaoProfileRelation
   @createModel(
     accountRelation: LIST
     description: "Relate Nabu profile to a DAO model."
