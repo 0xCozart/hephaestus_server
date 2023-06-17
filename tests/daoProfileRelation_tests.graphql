@@ -1,0 +1,11 @@
+mutation createNabuProfile {
+  createNabuProfileAlpha(
+    input: { content: { userDID: "", displayName: "", accountCreated: "" } }
+  ) {
+    document {
+      accountCreated
+      id
+    }
+    clientMutationId
+  }
+}
