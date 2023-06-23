@@ -2,7 +2,7 @@
 type NabuProfileAlpha
   @createModel(accountRelation: SINGLE, description: "User profile for Nabu.") {
   # userDID: model to account reference here
-  userDID: DID! @accountReference
+  userDID: DID! @documentAccount
   displayName: String! @string(minLength: 3, maxLength: 50)
   # daoList: model to model --
   accountCreated: DateTime!
