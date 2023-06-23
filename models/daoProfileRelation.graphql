@@ -1,6 +1,6 @@
 type NabuProfileAlpha
   @loadModel(
-    id: "kjzl6hvfrbw6c9tvpvx7o8s4zjdw14jgvf5a35e7t5p31cxpw3k3e52vc46n3ih"
+    id: "kjzl6hvfrbw6c7m2o4v21vs0zc5b7y4lxrepf67z42ydmifpcnvxtby4fhu6mhl"
   ) {
   id: ID!
 }
@@ -19,6 +19,9 @@ type DaoProfileRelation
   ) {
   nabuID: StreamID! @documentReference(model: "NabuProfileAlpha")
   nabu: NabuProfileAlpha! @relationDocument(property: "nabuID")
+  membersDAOProfileID: StreamID! @documentReference(model: "MembersDAOProfile")
+  membersDAOProfile: MembersDAOProfile!
+    @relationDocument(property: "membersDAOProfileID")
   daoID: StreamID! @documentReference(model: "DAO")
   dao: DAO! @relationDocument(property: "daoID")
 }
