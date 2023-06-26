@@ -12,7 +12,7 @@ type DAO
   id: ID!
 }
 
-type UserDAOProfile
+type DAOProfile
   @createModel(accountRelation: LIST, description: "Users DAO profile.") {
   role: [String]
   reputation: Int!
@@ -25,4 +25,5 @@ type UserDAOProfile
   # same as above
   daoID: StreamID! @docuemntReference(model: "DAO")
   dao: AccountID! @relationDocument(property: "daoID")
+  isActiveMemebr: Boolean!
 }
