@@ -12,11 +12,11 @@ type DAO
   id: ID!
 }
 
-type DAOProfile
+type MembersDAOProfile
   @createModel(accountRelation: LIST, description: "Users DAO profile.") {
   role: [String]
   reputation: Int!
-  userDID: DID! @accountReference
+  userDID: DID! @documentAccount
   # create the stream doc reference
   usersNabuProfileID: StreamID! @docuemntReference(model: "NabuProfileAlpha")
   # the property points model + stream :D
