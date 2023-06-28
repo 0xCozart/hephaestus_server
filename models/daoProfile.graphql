@@ -14,16 +14,13 @@ type DAO
 
 type MembersDAOProfile
   @createModel(accountRelation: LIST, description: "Users DAO profile.") {
-  role: [String]
-  reputation: Int!
   userDID: DID! @documentAccount
-  # create the stream doc reference
-  usersNabuProfileID: StreamID! @docuemntReference(model: "NabuProfileAlpha")
-  # the property points model + stream :D
-  usersNabuProfile: NabuProfileAlpha!
+  usersProfileID: StreamID! @docuemntReference(model: "NabuProfileAlpha")
+  usersProfile: NabuProfileAlpha!
     @relationDocument(property: "usersNabuProfileID")
-  # same as above
   daoID: StreamID! @docuemntReference(model: "DAO")
   dao: AccountID! @relationDocument(property: "daoID")
+  role: [String]
+  reputation: Int!
   isActiveMemebr: Boolean!
 }
