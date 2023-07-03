@@ -5,10 +5,6 @@ type NabuProfileAlpha
   id: ID!
 }
 
-type MembersDAOProfile @loadModel(id: "") {
-  id: ID!
-}
-
 type DAO
   @loadModel(
     id: "kjzl6hvfrbw6c96obc67ocqpesvzg0v5opvwox3pncdkh9co0bjy6cntgh269nh"
@@ -16,16 +12,16 @@ type DAO
   id: ID!
 }
 
-type DaoProfileRelation
+type Relations
   @createModel(
     accountRelation: LIST
     description: "Relate Nabu profile to a DAO model."
   ) {
   nabuID: StreamID! @documentReference(model: "NabuProfileAlpha")
   nabu: NabuProfileAlpha! @relationDocument(property: "nabuID")
-  membersDAOProfileID: StreamID! @documentReference(model: "MembersDAOProfile")
-  membersDAOProfile: MembersDAOProfile!
-    @relationDocument(property: "membersDAOProfileID")
+  # membersDAOProfileID: StreamID! @documentReference(model: "MembersDAOProfile")
+  # membersDAOProfile: MembersDAOProfile!
+  #   @relationDocument(property: "membersDAOProfileID")
   daoID: StreamID! @documentReference(model: "DAO")
   dao: DAO! @relationDocument(property: "daoID")
 }

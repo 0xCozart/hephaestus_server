@@ -1,8 +1,0 @@
-type DAOToken
-  @createModel(
-    accountRelation: LIST
-    description: "DAO contract and token information."
-  ) {
-  # need to research to see if there is a standard for erc721/1155
-  token: URI
-}
