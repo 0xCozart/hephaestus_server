@@ -5,11 +5,10 @@ type Relations
   id: ID!
 }
 
-type NabuProfileAlpha
+type DAO
   @loadModel(
-    id: "kjzl6hvfrbw6c7m2o4v21vs0zc5b7y4lxrepf67z42ydmifpcnvxtby4fhu6mhl"
+    id: "kjzl6hvfrbw6c5e8lzp8pes8n3yrq5o3kai7el3yi7oqy44d85oksz90lczdfte"
   ) {
-  daoList: [Relations] @relationFrom(model: "Relations", property: "daoID")
-  daoProfiles: [Relations]
+  members: [Relations]
     @relationFrom(model: "Relations", property: "membersDaoProfileID")
 }
