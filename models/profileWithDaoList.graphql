@@ -1,4 +1,4 @@
-type DaoProfileRelation
+type Relations
   @loadModel(
     id: "kjzl6hvfrbw6c778grkt67dl3kdp3rt4kubayafaotgzpysqrn12dj8ctcia828"
   ) {
@@ -9,6 +9,8 @@ type NabuProfileAlpha
   @loadModel(
     id: "kjzl6hvfrbw6c7m2o4v21vs0zc5b7y4lxrepf67z42ydmifpcnvxtby4fhu6mhl"
   ) {
-  daoList: [DaoProfileRelation]
+  daoList: [Relations]
     @relationFrom(model: "DaoProfileRelation", property: "daoID")
+  daoProfiles: [Relations]
+    @relationFrom(model: "DaoProfileRelation", property: "MembersDaoProfileID")
 }

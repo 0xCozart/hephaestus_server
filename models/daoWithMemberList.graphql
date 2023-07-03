@@ -1,4 +1,4 @@
-type DaoProfileRelation
+type Relations
   @loadModel(
     id: "kjzl6hvfrbw6c778grkt67dl3kdp3rt4kubayafaotgzpysqrn12dj8ctcia828"
   ) {
@@ -9,6 +9,6 @@ type DAO
   @loadModel(
     id: "kjzl6hvfrbw6c96obc67ocqpesvzg0v5opvwox3pncdkh9co0bjy6cntgh269nh"
   ) {
-  members: [DaoProfileRelation]
-    @relationFrom(model: "DaoProfileRelation", property: "membersDAOProfileID")
+  members: [Relations]
+    @relationFrom(model: "DaoProfileRelation", property: "MembersDaoProfileID")
 }

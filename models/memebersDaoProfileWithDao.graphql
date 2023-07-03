@@ -1,0 +1,12 @@
+type Relations @loadModel(id: "") {
+  id: ID!
+}
+
+type MembersDaoProfile
+  @createModel(accountRelation: LIST, description: "Users DAO profile.") {
+  userDID: DID! @documentAccount
+  role: [String] @list(minLength: 0, maxLength: 10)
+  reputation: Int!
+  isActiveMemebr: Boolean!
+  dateJoined: DateTime
+}

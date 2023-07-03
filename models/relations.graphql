@@ -12,6 +12,10 @@ type DAO
   id: ID!
 }
 
+type MembersDaoProfile @loadModel(id: "") {
+  id: ID!
+}
+
 type Relations
   @createModel(
     accountRelation: LIST
@@ -19,9 +23,9 @@ type Relations
   ) {
   nabuID: StreamID! @documentReference(model: "NabuProfileAlpha")
   nabu: NabuProfileAlpha! @relationDocument(property: "nabuID")
-  # membersDAOProfileID: StreamID! @documentReference(model: "MembersDAOProfile")
-  # membersDAOProfile: MembersDAOProfile!
-  #   @relationDocument(property: "membersDAOProfileID")
+  MembersDaoProfileID: StreamID! @documentReference(model: "MembersDaoProfile")
+  MembersDaoProfile: MembersDaoProfile!
+    @relationDocument(property: "MembersDaoProfileID")
   daoID: StreamID! @documentReference(model: "DAO")
   dao: DAO! @relationDocument(property: "daoID")
 }
