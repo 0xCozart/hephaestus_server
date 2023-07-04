@@ -1,0 +1,44 @@
+query GetFirstTenProfiles {
+  nabuProfileAlphaIndex(first: 10) {
+    edges {
+      node {
+        accountCreated
+        displayName
+        addressList
+        id
+      }
+    }
+  }
+}
+
+query NabuQueryThroughID {
+  node(id: "k2t6wzhkhabz4w24beldx5qk00h6oh6vq6z5bhvmh0mbxoix8393yf8qjr9h4y") {
+    id
+    ... on NabuProfileAlpha {
+      id
+      displayName
+      accountCreated
+      userDID {
+        id
+      }
+    }
+  }
+}
+
+query ViewerQuery {
+  query
+  MyQuery {
+    viewer {
+      nabuProfileAlpha {
+        displayName
+        id
+        accountCreated
+        addressList
+        userDID {
+          isViewer
+        }
+      }
+      id
+    }
+  }
+}

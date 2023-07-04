@@ -10,15 +10,4 @@
 | daoWithMemberList        | dao + relations                                                 | 6               |
 | membersDaoProfileWithDao | membersDaoProfile + relations                                   | 7               |
 
-profile <---> dao
-<---> daoProfile
-
-dao <---> daoProfile
-
-create profile comp
-create dao comp
-create members comp (includes dao model)
-create relation comp
-create new profile comp with list of daos and members
-create new dao with list of members
-create new daoProfile with DAO property pointing to dao in relation container
+merge all composites after
