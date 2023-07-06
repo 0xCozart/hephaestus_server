@@ -26,19 +26,16 @@ query NabuQueryThroughID {
 }
 
 query ViewerQuery {
-  query
-  MyQuery {
-    viewer {
-      nabuProfileAlpha {
-        displayName
-        id
-        accountCreated
-        addressList
-        userDID {
-          isViewer
-        }
-      }
+  viewer {
+    nabuProfileAlpha {
+      displayName
       id
+      accountCreated
+      addressList
+      userDID {
+        isViewer
+      }
     }
+    id
   }
 }
