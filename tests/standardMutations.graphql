@@ -1,0 +1,27 @@
+mutation CreateDAO($i: CreateDAOInput!) {
+  createDAO(input: $i) {
+    document {
+      id
+      name
+      chain
+      token
+      createdAt
+      description
+      creator {
+        id
+        isViewer
+      }
+    }
+  }
+}
+
+# { "i":
+#    {"content": {
+#         "name": "test_dao_1",
+#         "token": "eip155:1:0xab16a96D359eC26a11e2C2b3d8f8B8942d5Bfcdb",
+#         "createdAt": "2023-07-06T02:41:39.354Z",
+#         "description": "test description 1",
+#         "chain": "eip155:1"
+#         }
+#     }
+# }
