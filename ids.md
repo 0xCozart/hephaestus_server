@@ -7,7 +7,7 @@
 | membersDaoProfile        | kjzl6hvfrbw6c82bq03k4d0zkso9x8qu4riphnxrwxunc4yv8aaautvaqvsbfm1 | 3               |
 | relations                | kjzl6hvfrbw6c5yp1hymt0sud9xq4sg6alj21sgk33pk83t876jy9xr3kr0qv5u | 4               |
 | profileWithDaoList       | profile + relations                                             | 5               |
-| daoWithMemberList        | dao + relations                                                 | 6               |
+| daoWithMembersList       | dao + relations                                                 | 6               |
 | membersDaoProfileWithDao | membersDaoProfile + relations                                   | 7               |
 
 merge all composites after
