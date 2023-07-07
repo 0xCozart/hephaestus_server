@@ -14,7 +14,7 @@ type DAO
 
 type MembersDaoProfile
   @loadModel(
-    id: "kjzl6hvfrbw6c8sng6iui873clf3hq4lom692367zm0mmqo588639t9i22busph"
+    id: "kjzl6hvfrbw6c82bq03k4d0zkso9x8qu4riphnxrwxunc4yv8aaautvaqvsbfm1"
   ) {
   id: ID!
 }

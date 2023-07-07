@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "models": {
-    "kjzl6hvfrbw6c9z2icyjqjgwdgxdhnpn87ruzqybhubv3djnf27avbd2w86f3hf": [
+    "kjzl6hvfrbw6c5yp1hymt0sud9xq4sg6alj21sgk33pk83t876jy9xr3kr0qv5u": [
       {
         "jws": {
           "payload": "AXESIEINHL9W-HKCsSp4Jnbajysljy1PFmOzvvAh0jWPw_Uw",
@@ -37,16 +37,16 @@
     "account": {},
     "root": {},
     "models": {
-      "kjzl6hvfrbw6c9z2icyjqjgwdgxdhnpn87ruzqybhubv3djnf27avbd2w86f3hf": {},
+      "kjzl6hvfrbw6c5yp1hymt0sud9xq4sg6alj21sgk33pk83t876jy9xr3kr0qv5u": {},
       "kjzl6hvfrbw6c7m2o4v21vs0zc5b7y4lxrepf67z42ydmifpcnvxtby4fhu6mhl": {
         "daoList": {
           "type": "relationFrom",
-          "model": "kjzl6hvfrbw6c9z2icyjqjgwdgxdhnpn87ruzqybhubv3djnf27avbd2w86f3hf",
+          "model": "kjzl6hvfrbw6c5yp1hymt0sud9xq4sg6alj21sgk33pk83t876jy9xr3kr0qv5u",
           "property": "daoID"
         },
         "daoProfiles": {
           "type": "relationFrom",
-          "model": "kjzl6hvfrbw6c9z2icyjqjgwdgxdhnpn87ruzqybhubv3djnf27avbd2w86f3hf",
+          "model": "kjzl6hvfrbw6c5yp1hymt0sud9xq4sg6alj21sgk33pk83t876jy9xr3kr0qv5u",
           "property": "membersDaoProfileID"
         }
       }
