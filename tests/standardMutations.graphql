@@ -25,3 +25,25 @@ mutation CreateDAO($i: CreateDAOInput!) {
 #         }
 #     }
 # }
+
+mutation MyMutation {
+  createMembersDaoProfile(
+    input: {
+      content: {
+        userDID: "did:key:z6MkeZvjaD955G8S9eCvva8zU2tDBEHmrJXvbWz71rPMqBPR"
+        isActiveMemebr: true
+      }
+    }
+  ) {
+    document {
+      id
+      userDID {
+        id
+      }
+      isActiveMemebr
+    }
+  }
+}
+
+kjzl6kcym7w8y9xz45xett4mlaptmhhjmotbogz1331x02dm8zqoemlf15b4mw9
+kjzl6kcym7w8y5wasow2p39kymcq1arqy2t6n3fihsx3zsj4rudk8gtja5lgdyb

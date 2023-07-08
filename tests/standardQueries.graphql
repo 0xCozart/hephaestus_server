@@ -39,3 +39,36 @@ query ViewerQuery {
     id
   }
 }
+
+#Queries dao with members
+query MyQuery {
+  node(id: "kjzl6kcym7w8y93w426s45cn9pjs8dfil5dok14hyzaz31g33v5rus8ou7i60gq") {
+    ... on DAO {
+      id
+      name
+      creator {
+        id
+        isViewer
+        nabuProfileAlpha {
+          id
+          accountCreated
+          userDID {
+            id
+          }
+        }
+      }
+      members(first: 10) {
+        ... on RelationsConnection {
+          edges {
+            node {
+              dao {
+                id
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
