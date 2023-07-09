@@ -1,13 +1,13 @@
 type Relations
   @loadModel(
-    id: "kjzl6hvfrbw6c5yp1hymt0sud9xq4sg6alj21sgk33pk83t876jy9xr3kr0qv5u"
+    id: "kjzl6hvfrbw6c818pbnq3zwrhor4pwc2l7wpnw6oy81vrr4gdopr5v9t732br1h"
   ) {
   id: ID!
 }
 
 type MembersDaoProfile
   @loadModel(
-    id: "kjzl6hvfrbw6c82bq03k4d0zkso9x8qu4riphnxrwxunc4yv8aaautvaqvsbfm1"
+    id: "kjzl6hvfrbw6c75un6ip9ccmhbjh0ch38ds95ym675v66qjbg9phfzjeav03xpc"
   ) {
   dao: [Relations] @relationFrom(model: "Relations", property: "daoID")
 }

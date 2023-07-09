@@ -1,6 +1,6 @@
 type Relations
   @loadModel(
-    id: "kjzl6hvfrbw6c5yp1hymt0sud9xq4sg6alj21sgk33pk83t876jy9xr3kr0qv5u"
+    id: "kjzl6hvfrbw6c818pbnq3zwrhor4pwc2l7wpnw6oy81vrr4gdopr5v9t732br1h"
   ) {
   id: ID!
 }
