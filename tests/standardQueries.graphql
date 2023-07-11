@@ -72,3 +72,31 @@ query MyQuery {
     }
   }
 }
+
+query RelationsQuery {
+  node(id: "kjzl6kcym7w8yad7v4lrw7q9ip7vxxn43867yxvgh2uj9zjojfciqkn8v4matfb") {
+    ... on Relations {
+      membersDaoProfile {
+        id
+        isActiveMemeber
+        reputation
+        roles
+      }
+      nabu {
+        displayName
+        accountCreated
+        id
+      }
+      dao {
+        members(first: 10) {
+          edges {
+            node {
+              id
+            }
+          }
+        }
+      }
+      nabuID
+    }
+  }
+}
