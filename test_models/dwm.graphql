@@ -1,0 +1,14 @@
+type MembersDaoProfile
+  @loadModel(
+    id: "kjzl6hvfrbw6c9bbxf8vbzzr77ht3k2ifcdrh9kio5gdof9icdjh5702iyq5l4x"
+  ) {
+  id: ID!
+}
+
+type DAO
+  @loadModel(
+    id: "kjzl6hvfrbw6c5e8lzp8pes8n3yrq5o3kai7el3yi7oqy44d85oksz90lczdfte"
+  ) {
+  members: [MembersDaoProfile]
+    @relationFrom(model: "MembersDaoProfile", property: "daoID")
+}
