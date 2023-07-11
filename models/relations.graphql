@@ -21,7 +21,7 @@ type MembersDaoProfile
 
 type Relations
   @createModel(
-    accountRelation: SINGLE
+    accountRelation: LIST
     description: "Relate Nabu profile to a DAO model."
   ) {
   nabuID: StreamID! @documentReference(model: "NabuProfileAlpha")
