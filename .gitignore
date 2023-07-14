@@ -9,3 +9,6 @@ composedb.env
 daemon_config.json
 ids.md
 commands.txt
+test_composites
+test_models
+test_runtimes
