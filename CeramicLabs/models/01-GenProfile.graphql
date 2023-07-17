@@ -1,0 +1,8 @@
+# User is the controller of this model
+type GeneralProfile @createModel(accountRelation: SINGLE, description: "A basic general profile") {
+  author: DID! @documentAccount
+  firstName: String @string(maxLength:200)
+  lastName: String @string(maxLength:200)
+  personalBio: String @string(maxLength:10000)
+}
+

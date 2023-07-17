@@ -1,0 +1,29 @@
+# User is the controller of this model
+type ModeSetting @createModel(
+    accountRelation: SINGLE
+    description: "A mode settings primitive that allows users to toggle between light, dark, and system settings"
+  ) {
+    author: DID! @documentAccount
+    mode: Mode!
+}
+
+enum Mode {
+  LIGHT 
+  DARK 
+  SYSTEM
+}
+
+# mutation{
+#       createModeSetting(
+#         input: {
+#           content: {
+#             mode: DARK
+#           }
+#         }
+#       ) {
+#         document {
+#           mode
+#         }
+        
+#       }
+#     }
