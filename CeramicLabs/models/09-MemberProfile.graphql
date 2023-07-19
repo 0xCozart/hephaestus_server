@@ -1,9 +1,13 @@
-type DAOProfile @loadModel(id: "$DAOPROFILE_ID") {
+type DAOProfile
+  @loadModel(
+    id: "kjzl6hvfrbw6c9q4kncx535xovogmvr3gr2rrv9dvnlcf94f85p27jx6s73dpif"
+  ) {
   id: ID!
 }
 
 # Member is the controller of this model
-type MemberProfile @createModel(
+type MemberProfile
+  @createModel(
     accountRelation: LIST
     description: "DAO-specific member profile"
   ) {

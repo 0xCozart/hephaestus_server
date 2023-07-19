@@ -1,12 +1,22 @@
-type Member @loadModel(id: "$MEMBER_ID") {
+type Member
+  @loadModel(
+    id: "kjzl6hvfrbw6cau1a5y2c8oeu9uel8731nw5ex0kvvkyd0kohovrwbokbbqdpfc"
+  ) {
   id: ID!
 }
 
-type Contributor @loadModel(id: "$CONTRIBUTOR_ID") {
+type Contributor
+  @loadModel(
+    id: "kjzl6hvfrbw6c8z9m2i4b4zo30mzp0ra9n1qokeebpfqglg6ppmy5f71iqdrl9d"
+  ) {
   id: ID!
 }
 
-type DAOProfile @loadModel(id: "$DAOPROFILE_ID") {
+type DAOProfile
+  @loadModel(
+    id: "kjzl6hvfrbw6c9q4kncx535xovogmvr3gr2rrv9dvnlcf94f85p27jx6s73dpif"
+  ) {
   members: [Member] @relationFrom(model: "Member", property: "DaoProfile")
-  contributors: [Contributor] @relationFrom(model: "Contributor", property: "DaoProfile")
+  contributors: [Contributor]
+    @relationFrom(model: "Contributor", property: "DaoProfile")
 }
