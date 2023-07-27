@@ -1,8 +1,9 @@
 # User is the controller of this model
-type Skills @createModel(
+type Skills
+  @createModel(
     accountRelation: SINGLE
     description: "Standardized skills model for DAO contributors"
-  ){
+  ) {
   author: DID! @documentAccount
   peopleAndGovernance: Boolean
   developmentEngineering: Boolean
@@ -44,5 +45,5 @@ type Skills @createModel(
   risk: Boolean
   tokenomics: Boolean
   contributorExperience: Boolean
-  other: String @string(maxLength:200)
+  other: String @string(maxLength: 200)
 }
